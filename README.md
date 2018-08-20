@@ -25,6 +25,9 @@ func main() {
     if err != nil {
         panic(err)
     }
+    store.SetKeyPrefix("sess_") //optional: another prefix
+
+    tokensession.SetTokenName("X-USER-TOKEN") //optional: another header name
 
     token := "XXXXXXXX"
     session := tokensession.NewTokenSession(token, store)
